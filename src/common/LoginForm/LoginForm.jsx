@@ -1,11 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { logMe } from '../../services/apiCalls';
+
+import { useDispatch, useSelector } from "react-redux";
+
+import { login, userData } from '../../pages/userSlice';
+
+import { useNavigate } from "react-router-dom";
+
+
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
 
-export function LoginForm() {
+export const LoginForm = () => {
+
+  const navigate = useNavigate();
+
+  //Instancio Redux en modo escritura y lectura
+
+  const dispatch = useDispatch();
+  const credentialsRdx = useSelector(userData);
 
   let user = {
     email: '',
@@ -20,7 +36,41 @@ const newValue = ({target}) => {
         
     setValor({...valor,
         [name]:value
-})}
+})};
+
+const [welcome, setWelcome] = useState("");
+
+  useEffect(() => {
+    if (credentialsRdx.credentials?.token) {
+      //Si No token...home redirect
+      navigate("/");
+    }
+  }, []);
+
+  const logeame = () => {
+    logMe(credenciales)
+      .then((respuesta) => {
+        let datosBackend = {
+          token: respuesta.data.token,
+          usuario: respuesta.data.data.user,
+        };
+
+        //Este es el momento en el que guardo en REDUX
+        dispatch(login({ credentials: datosBackend }));
+
+        //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
+        setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.name}`);
+
+        //Redirección a Home
+
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
+      })
+      .catch((error) => console.log(error));
+  };
+
+    
   return (
     <Form>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
@@ -48,7 +98,7 @@ const newValue = ({target}) => {
 
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 10, offset: 2 }}>
-          <Button type="submit">Sign in</Button>
+          <Button type="submit" onClick={() => logeame()}>Log Me</Button>
         </Col>
       </Form.Group>
     </Form>
