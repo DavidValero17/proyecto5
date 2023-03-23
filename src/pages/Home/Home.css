@@ -1,0 +1,13 @@
+.Imagen {
+
+   width: 100vw;
+   height: 85vh;
+
+    background-image: url(../../assets/1.jpg);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+
+    
+}

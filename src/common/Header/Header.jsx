@@ -5,13 +5,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+
 export const Header = () => {
 
 const navigate = useNavigate();
 
   return (
     <>
-    <Navbar bg="light" variant="light">
+    <Navbar bg="primary" variant="dark">
         <Container fluid>
             <Navbar.Brand onClick={() => navigate("/home")}>D&J Clinic</Navbar.Brand>
             <Nav className="me-auto">
