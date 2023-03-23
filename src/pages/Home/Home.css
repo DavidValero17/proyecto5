@@ -1,13 +1,18 @@
 .Imagen {
 
    width: 100vw;
-   height: 85vh;
+   height: 90vh;
 
     background-image: url(../../assets/1.jpg);
 
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: center;
+
+    text-align: center;
+
+    font-size: xx-large;
+    color:cornflowerblue
 
     
 }

@@ -4,8 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-
-export function LoginForm() {
+export function RegisterForm() {
 
   let user = {
     email: 'email@email.com',
@@ -16,8 +15,8 @@ const [valor, setValor] = useState(user);
 const {email, password} = valor;
 
 const newValue = ({target}) => {
-    const {name, value} = target;
-        
+    const {name, value} = target;   
+
     setValor({...valor,
         [name]:value
 })}
@@ -40,6 +39,33 @@ const newValue = ({target}) => {
           <Form.Control type="text" name='password' placeholder='password' value={password} onChange={newValue} />
         </Col>
       </Form.Group>
+      <fieldset>
+        <Form.Group as={Row} className="mb-3">
+          <Form.Label as="legend" column sm={2}>
+            Genre
+          </Form.Label>
+          <Col sm={10}>
+            <Form.Check
+              type="radio"
+              label="Woman"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios1"
+            />
+            <Form.Check
+              type="radio"
+              label="Men"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios2"
+            />
+            <Form.Check
+              type="radio"
+              label="Null"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios3"
+            />
+          </Col>
+        </Form.Group>
+      </fieldset>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
         <Col sm={{ span: 10, offset: 2 }}>
           <Form.Check label="Remember me" />
@@ -55,4 +81,4 @@ const newValue = ({target}) => {
   );
 }
 
-export default LoginForm;
+export default RegisterForm ;

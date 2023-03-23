@@ -6,8 +6,8 @@ export const Home = () => {
   return (
 
     <>
-    <div className='Home'>Home</div>
-    <div className='Imagen'></div>
+    {/* <div className='Home'>Home</div> */}
+    <div className='Imagen'>Bienvenid@s a D&J Clinic</div>
     </>
     
   )

@@ -1,7 +1,11 @@
 import React from 'react'
+import LoginForm from '../../common/LoginForm/LoginForm'
 
 export const Login = () => {
   return (
-    <div>Login</div>
+    <>
+    <div className='CenteredForm'><LoginForm /></div>
+    </>
+    
   )
 }
