@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 export function LoginForm() {
 
   let user = {
-    email: 'email@email.com',
+    email: '',
     password: ''
 }
 
