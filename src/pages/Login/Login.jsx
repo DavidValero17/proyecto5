@@ -1,24 +1,24 @@
-import React from 'react'
+import React from "react";
 
-import { useState, useEffect } from 'react';
-import { logMe } from '../../services/apiCalls';
+import { useState, useEffect } from "react";
+import { logMe } from "../../services/apiCalls";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { login, userData } from '../userSlice';
+import { login, userData } from "../userSlice";
 
 import { useNavigate } from "react-router-dom";
+import { InputLogin } from "../../common/LoginForm/LoginForm";
 
+import { decodeToken } from "react-jwt";
 
-import { decodeToken } from 'react-jwt';
-
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 
 export const Login = () => {
-
   const navigate = useNavigate();
 
   //Instancio Redux en modo escritura y lectura
@@ -26,37 +26,46 @@ export const Login = () => {
   const dispatch = useDispatch();
   const credentialsRdx = useSelector(userData);
 
-  let user = {
-    email: '',
-    password: ''
-}
+  const [credenciales, setCredenciales] = useState({
+    email: "",
+    password: "",
+  });
 
-const [valor, setValor] = useState(user);
-const {email, password} = valor;
+  const [welcome, setWelcome] = useState("");
 
-const newValue = ({target}) => {
-    const {name, value} = target;
-        
-    setValor({...valor,
-        [name]:value
-})};
+  useEffect(() => {
+    if (credentialsRdx.credentials?.token) {
+      //Si No token...home redirect
+      navigate("/");
+    }
+  }, []);
 
-const [welcome, setWelcome] = useState("");
+  const inputHandler = (e) => {
+    setCredenciales((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
-useEffect(() => {
-  if (credentialsRdx.credentials?.token) {
-    //Si No token...home redirect
-    navigate("/");
-  }
-}, []);
+  const checkError = (e) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    if (credentialsRdx.credentials?.token) {
+      //Si No token...home redirect
+      navigate("/");
+    }
+  }, []);
 
   const logeame = () => {
     logMe(credenciales)
       .then((respuesta) => {
-        let decodify = decodeToken(respuesta)
+        let decoded = decodeToken(respuesta.data.data);
+
         let datosBackend = {
-          token: respuesta.data.token,
-          usuario: decodify,
+          token: respuesta.data.data,
+          usuario: decoded,
         };
 
         //Este es el momento en el que guardo en REDUX
@@ -74,39 +83,68 @@ useEffect(() => {
       .catch((error) => console.log(error));
   };
 
-
   return (
-    <Form>
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-        <Form.Label column sm={2}>
-          Email
-        </Form.Label>
-        <Col sm={10}>
-          <Form.Control type="text" name='email' placeholder='email@email.com' value={email} onChange={newValue} />
-        </Col>
-      </Form.Group>
+    <div className="loginDesign">
+      {welcome !== "" ? (
+        <div>{welcome}</div>
+      ) : (
+        <Container fluid className="CenteredForm">
+          <Form>
+            <Form.Group
+              as={Row}
+              className="mb-3"
+              controlId="formHorizontalEmail"
+            >
+              <Form.Label column sm={2}>
+                Email
+              </Form.Label>
+              <Col sm={10}>
+                <InputLogin
+                  type="text"
+                  name="email"
+                  placeholder="email@email.com"
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+              </Col>
+            </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-        <Form.Label column sm={2}>
-          Pass
-        </Form.Label>
-        <Col sm={10}>
-          <Form.Control type="text" name='password' placeholder='password' value={password} onChange={newValue} />
-        </Col>
-      </Form.Group>
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <Form.Check label="Remember me" />
-        </Col>
-      </Form.Group>
+            <Form.Group
+              as={Row}
+              className="mb-3"
+              controlId="formHorizontalPassword"
+            >
+              <Form.Label column sm={2}>
+                Pass
+              </Form.Label>
+              <Col sm={10}>
+                <InputLogin
+                  type="text"
+                  name="password"
+                  placeholder="password"
+                  changeFunction={(e) => inputHandler(e)}
+                  blurFunction={(e) => checkError(e)}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              as={Row}
+              className="mb-3"
+              controlId="formHorizontalCheck"
+            >
+              <Col sm={{ span: 10, offset: 2 }}>
+                <Form.Check label="Remember me" />
+              </Col>
+            </Form.Group>
 
-      <Form.Group as={Row} className="mb-3">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <Button type="submit" onClick={() => logeame()}>Log Me</Button>
-        </Col>
-      </Form.Group>
-    </Form>
+            <Form.Group as={Row} className="mb-3">
+              <Col sm={{ span: 10, offset: 2 }}>
+                <Button onClick={() => logeame()}>Log Me</Button>
+              </Col>
+            </Form.Group>
+          </Form>
+        </Container>
+      )}
+    </div>
   );
-}
-    
-
+};
