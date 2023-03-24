@@ -72,7 +72,7 @@ export const Login = () => {
         dispatch(login({ credentials: datosBackend }));
 
         //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
-        setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.name}`);
+        setWelcome(`Bienvenid@ ${datosBackend.usuario.name}`);
 
         //Redirección a Home
 

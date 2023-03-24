@@ -9,6 +9,7 @@ import Row from "react-bootstrap/Row";
 import { InputRegister } from "../../common/RegisterForm/RegisterForm";
 import { registerMe } from "../../services/apiCalls";
 import { useNavigate } from "react-router-dom";
+import { logMe } from "../../services/apiCalls";
 
 
 
@@ -46,9 +47,8 @@ export const Register = () => {
         //Redirección a Home
 
         setTimeout(() => {
-          navigate("/");
+          navigate("/login");
         }, 3000);
-
   };
   return (
     <>
