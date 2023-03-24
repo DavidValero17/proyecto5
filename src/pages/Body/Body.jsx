@@ -3,7 +3,7 @@ import React from "react";
 import { Home } from "../Home/Home";
 import { Login } from "../Login/Login";
 import { Profile } from "../Profile/Profile";
-import { Register } from "../Register/Register";
+import { Register } from "../Register/Register"
 
 
 import { Routes, Route, Navigate } from "react-router-dom";

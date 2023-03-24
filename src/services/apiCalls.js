@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const root = "localhost:4000"
+const root = "https://localhost:4000"
 
 export const logMe = async (body) => {
 
