@@ -2,15 +2,22 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { userData } from "../../pages/userSlice";
+import { userData, userout } from "../../pages/userSlice";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
   const datosCredencialesRedux = useSelector(userData);
 
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
+  const logout = ()=>{
+    dispatch(userout({credentials:{}, token:""}))
+  }
 
   return (
     <>
@@ -30,9 +37,16 @@ export const Header = () => {
                 </Nav.Link>
               </>
             ) : datosCredencialesRedux.credentials?.token ? (
+              <>
               <Nav.Link as={Link} to="/profile">
                 Profile
               </Nav.Link>
+              <Nav.Link as={Link} to="/home" onClick={()=>logout()}>
+                Logout
+              </Nav.Link>
+              </>
+              
+              
             ) : (
               <div></div>
             )}

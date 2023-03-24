@@ -48,7 +48,7 @@ export const Register = () => {
 
         setTimeout(() => {
           navigate("/login");
-        }, 3000);
+        }, 1000);
   };
   return (
     <>
