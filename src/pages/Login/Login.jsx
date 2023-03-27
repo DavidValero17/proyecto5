@@ -119,7 +119,7 @@ export const Login = () => {
               </Form.Label>
               <Col sm={10}>
                 <InputLogin
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="password"
                   changeFunction={(e) => inputHandler(e)}

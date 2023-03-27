@@ -9,7 +9,6 @@ import Row from "react-bootstrap/Row";
 import { InputRegister } from "../../common/RegisterForm/RegisterForm";
 import { registerMe } from "../../services/apiCalls";
 import { useNavigate } from "react-router-dom";
-import { logMe } from "../../services/apiCalls";
 
 
 
@@ -41,7 +40,7 @@ export const Register = () => {
 
   const registrame = () => {
     registerMe(credenciales)
-        //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
+        //Una vez nos hemos registrado...mostramos mensaje...
         setWelcome(`Gracias por registrarte.`);
 
         //Redirección a Home
@@ -128,7 +127,7 @@ export const Register = () => {
             </Form.Label>
             <Col sm={10}>
               <InputRegister
-                type="text"
+                type="password"
                 name="password"
                 placeholder="password"
                 changeFunction={(e) => inputHandler(e)}
