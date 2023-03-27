@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="App">
       <div className='NavBar'><Header /></div>
-      <div className='Carousel'><CarouselHome /></div>
       <div><Footer /></div>
       <Body />
     </div>
