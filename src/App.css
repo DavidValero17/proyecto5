@@ -8,13 +8,8 @@
     padding: 0 0 0 0;
 }
 
-.Carousel {
-
-    /* display: flex;  */
-    /* align-items: center; */
-    /* justify-content: center; */
-    height: auto;
-    width: auto;
-
-    /* padding: 0 0 0 0; */
+.carouselImage {
+    /* width: 80vw; */
+    height: 95vh;
+  
 }

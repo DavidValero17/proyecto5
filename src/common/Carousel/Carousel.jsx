@@ -5,7 +5,7 @@ function CarouselHome() {
     <Carousel>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 carouselImage"
           src="src/assets/1.jpg"
           alt="First slide"
         />
@@ -16,7 +16,7 @@ function CarouselHome() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 carouselImage"
           src="src/assets/2.jpg"
           alt="Second slide"
         />
@@ -28,7 +28,7 @@ function CarouselHome() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 carouselImage"
           src="src/assets/3.jpg"
           alt="Third slide"
         />
