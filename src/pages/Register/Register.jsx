@@ -95,7 +95,7 @@ export const Register = () => {
               <InputRegister
                 type="text"
                 name="phone"
-                placeholder="000000000"
+                placeholder="Phone"
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />
@@ -129,7 +129,7 @@ export const Register = () => {
               <InputRegister
                 type="password"
                 name="password"
-                placeholder="password"
+                placeholder="Password"
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
               />

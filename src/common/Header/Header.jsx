@@ -41,6 +41,9 @@ export const Header = () => {
               <Nav.Link as={Link} to="/profile">
                 Profile
               </Nav.Link>
+              <Nav.Link as={Link} to="/newappointment">
+                New Appointment
+              </Nav.Link>
               <Nav.Link as={Link} to="/home" onClick={()=>logout()}>
                 Logout
               </Nav.Link>

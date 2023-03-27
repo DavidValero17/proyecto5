@@ -7,6 +7,7 @@ import { Register } from "../Register/Register"
 
 
 import { Routes, Route, Navigate } from "react-router-dom";
+import { NewAppointment } from "../NewAppointment/NewAppointment";
 
 export const Body = () => {
   return (
@@ -17,6 +18,7 @@ export const Body = () => {
         <Route path="/login" element={<Login />}/>
         <Route path="/profile" element={<Profile />}/>
         <Route path="/register" element={<Register />}/>
+        <Route path="/newappointment" element={<NewAppointment />}/>
       </Routes>
     </>
   );
