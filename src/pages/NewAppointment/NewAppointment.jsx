@@ -63,7 +63,7 @@ console.log(credentialsRdx.credentials.usuario.userId)
   console.log(credenciales);
   return (
     <>
-      <Container fluid className="CenteredForm">
+      <Container fluid className="CenteredForm2">
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="formHorizontalName">
             <Form.Label column sm={2}>

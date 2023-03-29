@@ -28,6 +28,7 @@ export const MyAppointments = () => {
           <Container fluid key={cita.id}>
             <Row className="d-flex">
               <Col xs={12} md={12} lg={12}>
+                
                 <Card style={{ width: "18rem" }}>
                   <Card.Body>
                     <Card.Title>{cita.date}</Card.Title>
