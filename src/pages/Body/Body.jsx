@@ -8,6 +8,7 @@ import { Register } from "../Register/Register"
 
 import { Routes, Route, Navigate } from "react-router-dom";
 import { NewAppointment } from "../NewAppointment/NewAppointment";
+import { MyAppointments } from "../MyAppointments/MyAppointments";
 
 export const Body = () => {
   return (
@@ -19,6 +20,7 @@ export const Body = () => {
         <Route path="/profile" element={<Profile />}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/newappointment" element={<NewAppointment />}/>
+        <Route path="/myappointments" element={<MyAppointments />}/>
       </Routes>
     </>
   );
