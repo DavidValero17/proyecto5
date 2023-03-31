@@ -52,6 +52,9 @@ export const Header = () => {
                   <NavDropdown.Item as={Link} to="/allappointments">
                     Ver todas las citas
                   </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/getallclients">
+                    Ver todos los clientes
+                  </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link as={Link} to="/home" onClick={() => logout()}>
                   Logout

@@ -10,6 +10,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { NewAppointment } from "../NewAppointment/NewAppointment";
 import { MyAppointments } from "../MyAppointments/MyAppointments";
 import { CheckAllAppointment } from "../CheckAppointment/CheckAllAppointment";
+import { GetAllClients } from "../GetAllClients/GetAllClients";
 
 export const Body = () => {
   return (
@@ -23,6 +24,7 @@ export const Body = () => {
         <Route path="/newappointment" element={<NewAppointment />}/>
         <Route path="/myappointments" element={<MyAppointments />}/>
         <Route path="/allappointments" element={<CheckAllAppointment />}/>
+        <Route path="/getallclients" element={<GetAllClients />}/>
 
       </Routes>
     </>

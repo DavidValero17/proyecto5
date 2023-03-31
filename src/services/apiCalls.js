@@ -47,3 +47,12 @@ export const getAllAppointment = async (token) => {
   };
   return await axios.get(`${root}/user/appointments/checkall/admin`, config);
 };
+
+export const getAllClients = async (token) => {
+  let config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  return await axios.get(`${root}/user/profile/checkallclients`, config);
+};
