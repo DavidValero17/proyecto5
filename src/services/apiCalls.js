@@ -38,3 +38,12 @@ export const getAppointment = async (token) => {
   };
   return await axios.get(`${root}/user/appointments/checkall`, config);
 };
+
+export const getAllAppointment = async (token) => {
+  let config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  return await axios.get(`${root}/user/appointments/checkall/admin`, config);
+};
