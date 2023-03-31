@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 import { useSelector } from "react-redux";
 
@@ -12,10 +12,12 @@ import { DisabledInputAppointment, InputAppointment } from "../../common/Appoint
 import { appointmentMe } from "../../services/apiCalls";
 
 import { userData } from "../userSlice";
+import { useNavigate } from "react-router-dom";
 
 export const NewAppointment = () => {
+  const navigate = useNavigate();
 
-  const credentialsRdx = useSelector(userData); 
+  const credentialsRdx = useSelector(userData);
   const [doctors, setDoctors] = useState([
     {
       id: 1,
@@ -33,9 +35,9 @@ export const NewAppointment = () => {
     price: "0",
     about: "",
     doctor_id: doctors.id,
-    client_id: credentialsRdx.credentials.usuario.userId
+    client_id: credentialsRdx.credentials.usuario.userId,
   });
-console.log(credentialsRdx.credentials.usuario.userId)
+  console.log(credentialsRdx.credentials.usuario.userId);
   const [welcome, setWelcome] = useState("");
 
   const inputHandler = (e) => {
@@ -52,12 +54,15 @@ console.log(credentialsRdx.credentials.usuario.userId)
   const createappointment = () => {
     appointmentMe(credenciales, credentialsRdx.credentials.token)
       .then((resultado) => {
-        setCredenciales(resultado.data)
-
+        setCredenciales(resultado.data);
       })
       .catch((error) => console.log(error));
     //Una vez nos hemos registrado...mostramos mensaje...
-    setWelcome(`Cita registrada correctamente.`);
+    setWelcome("Cita registrada correctamente.");
+
+    setTimeout(() => {
+      navigate("/myappointments");
+    }, 3000);
   };
 
   console.log(credenciales);
@@ -73,7 +78,6 @@ console.log(credentialsRdx.credentials.usuario.userId)
               <InputAppointment
                 type="date"
                 name="date"
-                // required pattern="\d{4}-\d{2}-\d{2}"
                 placeholder="yyyy/mm/dd"
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
