@@ -78,6 +78,7 @@ export const NewAppointment = () => {
               <InputAppointment
                 type="date"
                 name="date"
+                min="2023-03-31"
                 placeholder="yyyy/mm/dd"
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}
@@ -97,6 +98,8 @@ export const NewAppointment = () => {
               <InputAppointment
                 type="time"
                 name="hour"
+                min="09:00"
+                max="19:30"
                 placeholder="00:00"
                 changeFunction={(e) => inputHandler(e)}
                 blurFunction={(e) => checkError(e)}

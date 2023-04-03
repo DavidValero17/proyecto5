@@ -5,7 +5,7 @@
     height: 60px;
     background-color: #233dff;
     border-top: 1px solid #e5e5e5;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 98.9vw;
     color: white;

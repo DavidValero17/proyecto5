@@ -3,6 +3,8 @@ import Form from "react-bootstrap/Form";
 export const InputAppointment = ({
   type,
   name,
+  min,
+  max,
   placeholder,
   changeFunction,
   blurFunction,
@@ -12,6 +14,8 @@ export const InputAppointment = ({
     <Form.Control
       type={type}
       name={name}
+      min={min}
+      max={max}
       placeholder={placeholder}
       onChange={(e) => changeFunction(e)}
       onBlur={(e) => blurFunction(e)}
