@@ -74,24 +74,31 @@ Tecnologías utilizadas:
 <summary>Capturas</summary>
 
 En primer lugar teneis una vista donde se puede apreciar un navbar por el cual de primeras solo podremos o bien registrarnos o hacer login. 
+
 ![Alt text](src/assets/read1.png)
 
 Aquí teneis una captura del formulario de registro:
+
 ![Alt text](src/assets/read2.png)
 
 Este sería el formulario de login:
+
 ![Alt text](src/assets/read3.png)
 
 Una vez registrados pasaremos a ser automaticamente clientes, por lo cual podemos apreciar que del navbar desaparecen las opciones "Registro" y "Login" y en su lugar tendremos las opciones de ver nuestro perfil, crear una cita, ver nuestras y realizar el logout.
+
 ![Alt text](src/assets/readme9.png)
 
 Aquí teneis un ejemplo de la página para ver nuestras citas ya programadas:
+
 ![Alt text](src/assets/readme10.png)
 
 Si iniciamos sesión como administrador tendremos un par de funcionalidades añadidas, las cuales son: Ver todos los clientes existentes en la base de datos y ver todas las citas existentes en la base de datos.
+
 ![Alt text](src/assets/read4.png)
 
 Aqui teneis el formulario para crear una nueva cita:
+
 ![Alt text](src/assets/read5.png)
 
 
