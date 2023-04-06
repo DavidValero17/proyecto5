@@ -15,7 +15,7 @@ export const CheckAllAppointment = () => {
         .then((respuesta) => {
           setAppointmentInfo(respuesta.data.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => alert('Se produjo un error al cargar las citas'));
     }
   }, [appointmentInfo]);
 

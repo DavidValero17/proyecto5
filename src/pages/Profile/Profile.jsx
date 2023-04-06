@@ -19,7 +19,6 @@ export const Profile = () => {
     if (userProfile.name === "") {
       getProfile(reduxCredentials.credentials.token)
         .then((respuesta) => {
-          console.log(respuesta);
           setUserProfile({
             name: respuesta.data.data.name,
             surname: respuesta.data.data.surname,
@@ -27,7 +26,7 @@ export const Profile = () => {
             email: respuesta.data.data.email,
           });
         })
-        .catch((error) => console.log(error));
+        .catch((error) => alert('Se produjo un error al cargar tu perfil'));
     }
   }, [userProfile]);
   return (

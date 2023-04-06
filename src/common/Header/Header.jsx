@@ -15,7 +15,6 @@ export const Header = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-// console.log(datosCredencialesRedux.credentials.usuario.roleId)
   const logout = () => {
     dispatch(userout({ credentials: {}, token: "" }));
   };
@@ -37,7 +36,8 @@ export const Header = () => {
                   Login
                 </Nav.Link>
               </>
-            ) : datosCredencialesRedux.credentials?.token && datosCredencialesRedux.credentials?.usuario.roleId === 1  ? (
+            ) : datosCredencialesRedux.credentials?.token &&
+              datosCredencialesRedux.credentials?.usuario.roleId === 1 ? (
               <>
                 <Nav.Link as={Link} to="/profile">
                   Perfil
@@ -61,9 +61,8 @@ export const Header = () => {
                 </Nav.Link>
               </>
             ) : datosCredencialesRedux.credentials?.token ? (
-
               <>
-              <Nav.Link as={Link} to="/profile">
+                <Nav.Link as={Link} to="/profile">
                   Perfil
                 </Nav.Link>
                 <NavDropdown title="Citas" id="basic-nav-dropdown">
@@ -78,10 +77,7 @@ export const Header = () => {
                   Logout
                 </Nav.Link>
               </>
-            )
-            
-            :
-            (
+            ) : (
               <div></div>
             )}
           </Nav>

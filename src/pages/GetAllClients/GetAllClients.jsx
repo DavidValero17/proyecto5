@@ -16,11 +16,10 @@ export const GetAllClients = () => {
         .then((respuesta) => {
           setAppointmentInfo(respuesta.data.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => alert('Se produjo un error al cargar los clientes'));
     }
   }, [clientInfo]);
 
-  console.log(clientInfo);
 
   return (
     <div className="AppointmentsCards d-flex justify-content-center align-items-center vh-100">

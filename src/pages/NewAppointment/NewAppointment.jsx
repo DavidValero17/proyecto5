@@ -37,7 +37,6 @@ export const NewAppointment = () => {
     doctor_id: doctors.id,
     client_id: credentialsRdx.credentials.usuario.userId,
   });
-  console.log(credentialsRdx.credentials.usuario.userId);
   const [welcome, setWelcome] = useState("");
 
   const inputHandler = (e) => {
@@ -56,7 +55,7 @@ export const NewAppointment = () => {
       .then((resultado) => {
         setCredenciales(resultado.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert('Se produjo un error al crear una cita'));
     //Una vez nos hemos registrado...mostramos mensaje...
     setWelcome("Cita registrada correctamente.");
 
@@ -65,7 +64,6 @@ export const NewAppointment = () => {
     }, 3000);
   };
 
-  console.log(credenciales);
   return (
     <>
       <Container fluid className="CenteredForm2">

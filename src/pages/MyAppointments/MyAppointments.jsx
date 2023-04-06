@@ -17,7 +17,7 @@ export const MyAppointments = () => {
         .then((respuesta) => {
           setAppointmentInfo(respuesta.data.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => alert('Se produjo un error al cargar tus citas'));
     }
   }, [appointmentInfo]);
 
