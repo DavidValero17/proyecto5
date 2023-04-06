@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import { Row, Col } from "react-bootstrap";
-
 import { useSelector } from "react-redux";
 import { getAllAppointment } from "../../services/apiCalls";
 import { userData } from "../userSlice";
@@ -23,26 +21,24 @@ export const CheckAllAppointment = () => {
 
   return (
     <div className="AppointmentsCards">
-      {appointmentInfo.map((cita) => {
-        return (
-          <Container fluid key={cita.id}>
-            <Row className="d-flex">
-              <Col xs={12} md={12} lg={12}>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <Card.Title>{cita.date}</Card.Title>
-                    <Card.Text>
-                      <li>{cita.hour}</li>
-                      <li>{cita.price}</li>
-                      <li>{cita.about}</li>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        );
-      })}
+      <Container>
+        <Row className="d-flex justify-content-center">
+          {appointmentInfo.map((cita) => (
+            <Col xs={12} sm={6} md={4} lg={3} key={cita.id} className="my-3">
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title>{cita.date}</Card.Title>
+                  <Card.Text>
+                    <li>{cita.hour}</li>
+                    <li>{cita.price}</li>
+                    <li>{cita.about}</li>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 };

@@ -5,11 +5,9 @@ import './Footer.css';
 
 function Footer() {
   return (
-    // <Container fluid>    
     <div className="footer-container">
       <p>D&J Clinic ©</p>
     </div>
-    // </Container>
   );
 }
 

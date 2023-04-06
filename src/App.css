@@ -26,11 +26,7 @@
 
 .AppointmentsCards {
 
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* align-items: center; */
-    /* height: 80vh;
-    width: 80vw; */
+    margin-bottom: 70px;    
 }
 
 .navBarForm {
