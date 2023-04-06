@@ -19,16 +19,59 @@
 }
 
 .carouselImage {
-    /* width: 80vw; */
     height: 85vh;
+}
 
+@media (min-width: 768px) {
+    .Carousel {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .Carousel {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .WelcomeMessage {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .WelcomeMessage {
+        display: none;
+    }
 }
 
 .AppointmentsCards {
 
-    margin-bottom: 70px;    
+    margin-bottom: 70px;
 }
 
 .navBarForm {
     width: 100vw;
+}
+
+@media (max-width: 768px) {
+    .welcome-message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .welcome-message p {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
 }

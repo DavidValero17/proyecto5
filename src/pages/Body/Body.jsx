@@ -1,10 +1,8 @@
-
 import React from "react";
 import { Home } from "../Home/Home";
 import { Login } from "../Login/Login";
 import { Profile } from "../Profile/Profile";
-import { Register } from "../Register/Register"
-
+import { Register } from "../Register/Register";
 
 import { Routes, Route, Navigate } from "react-router-dom";
 import { NewAppointment } from "../NewAppointment/NewAppointment";
@@ -16,16 +14,15 @@ export const Body = () => {
   return (
     <>
       <Routes>
-        <Route path="*" element={<Navigate to="/"/>}/>
-        <Route path="/" element={<Home />}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/profile" element={<Profile />}/>
-        <Route path="/register" element={<Register />}/>
-        <Route path="/newappointment" element={<NewAppointment />}/>
-        <Route path="/myappointments" element={<MyAppointments />}/>
-        <Route path="/allappointments" element={<CheckAllAppointment />}/>
-        <Route path="/getallclients" element={<GetAllClients />}/>
-
+        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/newappointment" element={<NewAppointment />} />
+        <Route path="/myappointments" element={<MyAppointments />} />
+        <Route path="/allappointments" element={<CheckAllAppointment />} />
+        <Route path="/getallclients" element={<GetAllClients />} />
       </Routes>
     </>
   );

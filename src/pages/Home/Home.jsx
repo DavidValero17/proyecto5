@@ -1,14 +1,17 @@
-import React from 'react'
-import CarouselHome from '../../common/Carousel/Carousel'
-import './Home.css' 
-
+import React from "react";
+import CarouselHome from "../../common/Carousel/Carousel";
+import "./Home.css";
 
 export const Home = () => {
   return (
-
-    <>
-          <div className='Carousel'><CarouselHome /></div>
-    </>
-    
-  )
-}
+    <div className="HomePage">
+      <div className="Carousel">
+        <CarouselHome />
+      </div>
+      <div className="welcome-message">
+        <p>Bienvenido a D&J Clinic.
+        </p>
+      </div>
+    </div>
+  );
+};
