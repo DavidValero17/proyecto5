@@ -22,28 +22,27 @@ export const MyAppointments = () => {
   }, [appointmentInfo]);
 
   return (
-    <div className="AppointmentsCards">
-      {appointmentInfo.map((cita) => {
-        return (
-          <Container fluid key={cita.id}>
-            <Row className="d-flex">
-              <Col xs={12} md={12} lg={12}>
-                
-                <Card style={{ width: "18rem" }}>
-                  <Card.Body>
-                    <Card.Title>{cita.date}</Card.Title>
-                    <Card.Text>
+    <div className="AppointmentsCards d-flex justify-content-center align-items-center vh-100">
+      <Container>
+        <Row className="d-flex justify-content-center mt-5">
+          {appointmentInfo.map((cita) => (
+            <Col xs={12} md={6} lg={4} key={cita.id} className="my-3">
+              <Card style={{ marginBottom: "20px" }}>
+                <Card.Body>
+                  <Card.Title>{cita.date}</Card.Title>
+                  <Card.Text>
+                    <ul>
                       <li>{cita.hour}</li>
                       <li>{cita.price}</li>
                       <li>{cita.about}</li>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        );
-      })}
+                    </ul>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 };
