@@ -16,17 +16,23 @@ export const GetAllClients = () => {
         .then((respuesta) => {
           setAppointmentInfo(respuesta.data.data);
         })
-        .catch((error) => alert('Se produjo un error al cargar los clientes'));
+        .catch((error) => alert("Se produjo un error al cargar los clientes"));
     }
   }, [clientInfo]);
-
 
   return (
     <div className="AppointmentsCards d-flex justify-content-center align-items-center vh-100">
       <Container>
         <Row className="d-flex justify-content-center">
           {clientInfo.map((cliente) => (
-            <Col key={cliente.User.id} xs={12} sm={6} md={4} lg={3} className="my-3">
+            <Col
+              key={cliente.User.id}
+              xs={12}
+              sm={6}
+              md={4}
+              lg={3}
+              className="my-3"
+            >
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>{cliente.User.name}</Card.Title>

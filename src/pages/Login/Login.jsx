@@ -80,7 +80,7 @@ export const Login = () => {
           navigate("/");
         }, 3000);
       })
-      .catch((error) => alert('Se produjo un error al realizar el login'));
+      .catch((error) => alert("Se produjo un error al realizar el login"));
   };
 
   return (

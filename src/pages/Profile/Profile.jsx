@@ -26,21 +26,21 @@ export const Profile = () => {
             email: respuesta.data.data.email,
           });
         })
-        .catch((error) => alert('Se produjo un error al cargar tu perfil'));
+        .catch((error) => alert("Se produjo un error al cargar tu perfil"));
     }
   }, [userProfile]);
   return (
     <Container fluid className="CenteredForm">
-    <Card style={{ width: "18rem" }}>
-      <Card.Body>
-        <Card.Title>{userProfile.name}</Card.Title>
-        <Card.Text>
-          <li>{userProfile.surname}</li>
-          <li>{userProfile.phone}</li>
-          <li>{userProfile.email}</li>
-        </Card.Text>
-      </Card.Body>
-    </Card>
-   </Container> 
+      <Card style={{ width: "18rem" }}>
+        <Card.Body>
+          <Card.Title>{userProfile.name}</Card.Title>
+          <Card.Text>
+            <li>{userProfile.surname}</li>
+            <li>{userProfile.phone}</li>
+            <li>{userProfile.email}</li>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Container>
   );
 };

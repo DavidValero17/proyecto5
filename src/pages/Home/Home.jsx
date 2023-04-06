@@ -1,6 +1,5 @@
 import React from "react";
 import CarouselHome from "../../common/Carousel/Carousel";
-import "./Home.css";
 
 export const Home = () => {
   return (
@@ -9,8 +8,7 @@ export const Home = () => {
         <CarouselHome />
       </div>
       <div className="welcome-message">
-        <p>Bienvenido a D&J Clinic.
-        </p>
+        <p>Bienvenido a D&J Clinic.</p>
       </div>
     </div>
   );

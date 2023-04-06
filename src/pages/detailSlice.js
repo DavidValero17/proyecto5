@@ -1,20 +1,18 @@
-
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const detailSlice = createSlice({
-    name: 'detail',
-    initialState: {
-      choosenObject: {}
+  name: "detail",
+  initialState: {
+    choosenObject: {},
+  },
+  reducers: {
+    addChoosen: (state, action) => {
+      return {
+        ...state,
+        ...action.payload,
+      };
     },
-    reducers: {
-      addChoosen: (state, action) => {
-        return {
-          ...state,
-          ...action.payload
-        }
-      }
-    }
-    
+  },
 });
 
 //exporto las ACCIONES.....

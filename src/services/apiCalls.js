@@ -29,7 +29,6 @@ export const appointmentMe = async (body, token) => {
   return await axios.post(`${root}/appointment/appointment`, body, config);
 };
 
-
 export const getAppointment = async (token) => {
   let config = {
     headers: {

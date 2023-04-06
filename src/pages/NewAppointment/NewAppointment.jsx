@@ -8,7 +8,10 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import { DisabledInputAppointment, InputAppointment } from "../../common/AppointmentForm/AppointmentForm";
+import {
+  DisabledInputAppointment,
+  InputAppointment,
+} from "../../common/AppointmentForm/AppointmentForm";
 import { appointmentMe } from "../../services/apiCalls";
 
 import { userData } from "../userSlice";
@@ -55,8 +58,7 @@ export const NewAppointment = () => {
       .then((resultado) => {
         setCredenciales(resultado.data);
       })
-      .catch((error) => alert('Se produjo un error al crear una cita'));
-    //Una vez nos hemos registrado...mostramos mensaje...
+      .catch((error) => alert("Se produjo un error al crear una cita"));
     setWelcome("Cita registrada correctamente.");
 
     setTimeout(() => {

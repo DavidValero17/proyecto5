@@ -1,5 +1,4 @@
 import "./App.css";
-// import CarouselHome from './common/Carousel/Carousel'
 import Footer from "./common/Footer/Footer";
 
 import { Header } from "./common/Header/Header";

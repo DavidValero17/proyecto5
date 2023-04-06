@@ -1,20 +1,18 @@
-
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const appointmentSlice = createSlice({
-    name: 'appointment',
-    initialState: {
-      appointment: {}
+  name: "appointment",
+  initialState: {
+    appointment: {},
+  },
+  reducers: {
+    newAppointment: (state, action) => {
+      return {
+        ...state,
+        ...action.payload,
+      };
     },
-    reducers: {
-      newAppointment: (state, action) => {
-        return {
-          ...state,
-          ...action.payload
-        }
-      }
-    }
-    
+  },
 });
 
 //exporto las ACCIONES.....

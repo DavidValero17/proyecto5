@@ -19,7 +19,6 @@ export const InputAppointment = ({
       placeholder={placeholder}
       onChange={(e) => changeFunction(e)}
       onBlur={(e) => blurFunction(e)}
-    //   disable={disable}
     />
   );
 };
